@@ -1,0 +1,38 @@
+import LivingBackground from "@/components/LivingBackground";
+import PresentationNav from "@/components/PresentationNav";
+
+import SectionPortfolio from "@/components/SectionPortfolio";
+import SectionAnalytics from "@/components/SectionAnalytics";
+import SectionStrategy from "@/components/SectionStrategy";
+import SectionLiteracy from "@/components/SectionLiteracy";
+import SectionActivities from "@/components/SectionActivities";
+import SectionAchievements from "@/components/SectionAchievements";
+import SectionJoin from "@/components/SectionJoin";
+
+export const metadata = {
+  title: "Finance Club | Premier Investment Group",
+  description: "The premier hub for financial literacy, quantitative strategy, and elite networking.",
+};
+
+export default function Home() {
+  return (
+    <main className="relative h-screen w-full overflow-hidden text-brand-dark bg-white">
+      <LivingBackground />
+      
+      <div 
+        id="presentation-container" 
+        className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth relative z-10"
+      >
+        <section id="section-1" className="h-screen w-full snap-start snap-always relative overflow-hidden"><SectionPortfolio /></section>
+        <section id="section-2" className="h-screen w-full snap-start snap-always relative overflow-hidden"><SectionAnalytics /></section>
+        <section id="section-3" className="h-screen w-full snap-start snap-always relative overflow-hidden"><SectionStrategy /></section>
+        <section id="section-4" className="h-screen w-full snap-start snap-always relative overflow-hidden"><SectionLiteracy /></section>
+        <section id="section-5" className="h-screen w-full snap-start snap-always relative overflow-hidden"><SectionActivities /></section>
+        <section id="section-6" className="h-screen w-full snap-start snap-always relative overflow-hidden"><SectionAchievements /></section>
+        <section id="section-7" className="h-screen w-full snap-start snap-always relative overflow-hidden"><SectionJoin /></section>
+      </div>
+
+      <PresentationNav totalSections={7} />
+    </main>
+  );
+}

@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-emerald: #10B981;
+  --color-brand-emerald-soft: #D1FAE5;
+  --color-brand-blue: #2563EB;
+  --color-brand-blue-soft: #EEF5FF;
+  --color-brand-gold: #F59E0B;
+  --color-brand-gold-soft: #FEF3C7;
+  --color-brand-dark: #111827;
+  --color-brand-gray: #F5F7FA;
+  --color-brand-light: #FFFFFF;
+  --color-brand-offwhite: #FAFAFA;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #111827;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow: hidden; /* We manage scrolling in the container */
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbar for the presentation container */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid #F3F4F6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  border-radius: 1.5rem;
+}
