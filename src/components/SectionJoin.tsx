@@ -42,7 +42,7 @@ export default function SectionJoin() {
     "Prakhar Bhargava", "Mohit Bijarnia", "Daivik Kumar", "Pranjal Gangwar",
     "Parishi Jain", "Amit Kumar", "Mohit", "Tejas", "Shlok", "Nishqa",
     "Aditya", "Abhinav", "Bhumika Sharma", "Muskaan", "Ayush Singal",
-    "Kanishk Sain", "Manvendra Singh Yadav", "Animesh", "Yash", "Vihaan Singhal",
+    "Kanishk Sain", "Manvendra Singh Yadav", "Animesh Yash", "Vihaan Singhal",
     "Akshat Soral", "Atharv Gaur"
   ];
 

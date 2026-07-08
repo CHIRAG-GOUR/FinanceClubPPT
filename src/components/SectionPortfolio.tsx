@@ -42,12 +42,12 @@ export default function SectionPortfolio() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.1] mb-6">
-            <span className="block stagger-text text-brand-dark">Study On</span>
-            <span className="block stagger-text text-brand-emerald">Inflation.</span>
+            <span className="block stagger-text text-brand-dark">Inflation</span>
+            <span className="block stagger-text text-brand-emerald text-3xl md:text-4xl font-normal mt-3 opacity-80 italic">[in-'flā-shən]</span>
           </h1>
           
-          <p className="text-xl text-gray-600 mb-10 max-w-lg leading-relaxed stagger-text">
-            Understanding the hidden tax. A comprehensive look into the causes, effects, and economic mechanisms that drive rising prices.
+          <p className="text-2xl text-gray-700 mb-10 max-w-lg leading-relaxed stagger-text font-medium border-l-4 border-brand-emerald pl-6">
+            A rise in prices, which can be translated as the decline of purchasing power over time.
           </p>
           
           <div className="flex flex-wrap items-center gap-4 stagger-text">
