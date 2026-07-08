@@ -14,11 +14,15 @@ export default function SectionLiteracy() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    const ctx = gsap.context(() => {
+    let ctx: gsap.Context;
+    const timer = setTimeout(() => {
+      if (!containerRef.current) return;
+      const scrollerElement = document.getElementById("presentation-container") || window;
+      ctx = gsap.context(() => {
       gsap.from(".literacy-card", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: "#presentation-container",
+          scroller: scrollerElement,
           start: "top 60%"
         },
         y: 40,
@@ -30,7 +34,7 @@ export default function SectionLiteracy() {
       gsap.from(".theory-image", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: "#presentation-container",
+          scroller: scrollerElement,
           start: "top 60%"
         },
         scale: 0.95,
@@ -39,7 +43,11 @@ export default function SectionLiteracy() {
         ease: "power3.out",
       });
     }, containerRef);
-    return () => ctx.revert();
+    }, 100);
+    return () => {
+      clearTimeout(timer);
+      if (ctx) ctx.revert();
+    };
   }, []);
 
   return (

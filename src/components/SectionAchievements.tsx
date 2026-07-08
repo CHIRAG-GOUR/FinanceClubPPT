@@ -14,11 +14,15 @@ export default function SectionAchievements() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    const ctx = gsap.context(() => {
+    let ctx: gsap.Context;
+    const timer = setTimeout(() => {
+      if (!containerRef.current) return;
+      const scrollerElement = document.getElementById("presentation-container") || window;
+      ctx = gsap.context(() => {
       gsap.from(".measure-card", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: "#presentation-container",
+          scroller: scrollerElement,
           start: "top 60%"
         },
         y: 30,
@@ -29,7 +33,7 @@ export default function SectionAchievements() {
       gsap.from(".measures-image", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: "#presentation-container",
+          scroller: scrollerElement,
           start: "top 60%"
         },
         opacity: 0,
@@ -38,7 +42,11 @@ export default function SectionAchievements() {
         ease: "power2.out",
       });
     }, containerRef);
-    return () => ctx.revert();
+    }, 100);
+    return () => {
+      clearTimeout(timer);
+      if (ctx) ctx.revert();
+    };
   }, []);
 
   return (

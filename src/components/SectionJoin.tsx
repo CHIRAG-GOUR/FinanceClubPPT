@@ -13,11 +13,15 @@ export default function SectionJoin() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    const ctx = gsap.context(() => {
+    let ctx: gsap.Context;
+    const timer = setTimeout(() => {
+      if (!containerRef.current) return;
+      const scrollerElement = document.getElementById("presentation-container") || window;
+      ctx = gsap.context(() => {
       gsap.from(".join-content", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: "#presentation-container",
+          scroller: scrollerElement,
           start: "top 60%"
         },
         scale: 0.95,
@@ -27,7 +31,11 @@ export default function SectionJoin() {
         ease: "back.out(1.5)",
       });
     }, containerRef);
-    return () => ctx.revert();
+    }, 100);
+    return () => {
+      clearTimeout(timer);
+      if (ctx) ctx.revert();
+    };
   }, []);
 
   const members = [

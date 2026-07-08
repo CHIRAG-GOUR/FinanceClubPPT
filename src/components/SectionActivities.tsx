@@ -13,11 +13,15 @@ export default function SectionActivities() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    const ctx = gsap.context(() => {
+    let ctx: gsap.Context;
+    const timer = setTimeout(() => {
+      if (!containerRef.current) return;
+      const scrollerElement = document.getElementById("presentation-container") || window;
+      ctx = gsap.context(() => {
       gsap.from(".activity-item", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: "#presentation-container",
+          scroller: scrollerElement,
           start: "top 60%"
         },
         x: -50,
@@ -28,7 +32,7 @@ export default function SectionActivities() {
       gsap.from(".stat-number", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: "#presentation-container",
+          scroller: scrollerElement,
           start: "top 60%"
         },
         innerText: 0,
@@ -40,7 +44,7 @@ export default function SectionActivities() {
       gsap.from(".zimbabwe-image", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: "#presentation-container",
+          scroller: scrollerElement,
           start: "top 60%"
         },
         scale: 1.05,
@@ -49,7 +53,11 @@ export default function SectionActivities() {
         ease: "power2.out",
       });
     }, containerRef);
-    return () => ctx.revert();
+    }, 100);
+    return () => {
+      clearTimeout(timer);
+      if (ctx) ctx.revert();
+    };
   }, []);
 
   return (

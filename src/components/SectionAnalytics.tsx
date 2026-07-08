@@ -14,11 +14,15 @@ export default function SectionAnalytics() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    const ctx = gsap.context(() => {
+    let ctx: gsap.Context;
+    const timer = setTimeout(() => {
+      if (!containerRef.current) return;
+      const scrollerElement = document.getElementById("presentation-container") || window;
+      ctx = gsap.context(() => {
       gsap.from(".analytics-card", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: "#presentation-container",
+          scroller: scrollerElement,
           start: "top 60%"
         },
         y: 60,
@@ -30,7 +34,7 @@ export default function SectionAnalytics() {
       gsap.from(".analytics-image", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: "#presentation-container",
+          scroller: scrollerElement,
           start: "top 60%"
         },
         scale: 0.9,
@@ -39,7 +43,11 @@ export default function SectionAnalytics() {
         ease: "power3.out",
       });
     }, containerRef);
-    return () => ctx.revert();
+    }, 100);
+    return () => {
+      clearTimeout(timer);
+      if (ctx) ctx.revert();
+    };
   }, []);
 
   const causes = [
