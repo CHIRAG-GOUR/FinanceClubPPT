@@ -18,6 +18,7 @@ export default function SectionStrategy() {
       gsap.from(".strategy-item", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         y: 40,
@@ -29,6 +30,7 @@ export default function SectionStrategy() {
       gsap.from(".effects-image", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         x: -50,

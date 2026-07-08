@@ -17,6 +17,7 @@ export default function SectionActivities() {
       gsap.from(".activity-item", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         x: -50,
@@ -27,6 +28,7 @@ export default function SectionActivities() {
       gsap.from(".stat-number", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         innerText: 0,
@@ -38,6 +40,7 @@ export default function SectionActivities() {
       gsap.from(".zimbabwe-image", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         scale: 1.05,

@@ -18,6 +18,7 @@ export default function SectionAchievements() {
       gsap.from(".measure-card", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         y: 30,
@@ -28,6 +29,7 @@ export default function SectionAchievements() {
       gsap.from(".measures-image", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         opacity: 0,

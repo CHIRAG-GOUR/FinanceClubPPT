@@ -18,6 +18,7 @@ export default function SectionAnalytics() {
       gsap.from(".analytics-card", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         y: 60,
@@ -29,6 +30,7 @@ export default function SectionAnalytics() {
       gsap.from(".analytics-image", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         scale: 0.9,

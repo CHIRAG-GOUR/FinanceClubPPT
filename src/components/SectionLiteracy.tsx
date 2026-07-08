@@ -18,6 +18,7 @@ export default function SectionLiteracy() {
       gsap.from(".literacy-card", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         y: 40,
@@ -29,6 +30,7 @@ export default function SectionLiteracy() {
       gsap.from(".theory-image", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         scale: 0.95,

@@ -17,6 +17,7 @@ export default function SectionJoin() {
       gsap.from(".join-content", {
         scrollTrigger: {
           trigger: containerRef.current,
+          scroller: "#presentation-container",
           start: "top 60%"
         },
         scale: 0.95,
