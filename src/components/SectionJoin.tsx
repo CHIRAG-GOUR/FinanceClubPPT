@@ -25,7 +25,7 @@ export default function SectionJoin() {
           start: "top 60%"
         },
         scale: 0.95,
-        opacity: 0,
+        
         y: 40,
         duration: 1,
         ease: "back.out(1.5)",

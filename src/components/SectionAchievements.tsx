@@ -26,7 +26,7 @@ export default function SectionAchievements() {
           start: "top 60%"
         },
         y: 30,
-        opacity: 0,
+        
         duration: 0.8,
         stagger: 0.15,
       });
@@ -36,7 +36,7 @@ export default function SectionAchievements() {
           scroller: scrollerElement,
           start: "top 60%"
         },
-        opacity: 0,
+        
         scale: 0.9,
         duration: 1.5,
         ease: "power2.out",

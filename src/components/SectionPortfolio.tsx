@@ -19,7 +19,7 @@ export default function SectionPortfolio() {
       
       gsap.fromTo(
         ".dashboard-card",
-        { y: 50, opacity: 0, scale: 0.95 },
+        { y: 50,  scale: 0.95 },
         { y: 0, opacity: 1, scale: 1, duration: 1.2, stagger: 0.15, ease: "expo.out", delay: 1 }
       );
     }, containerRef);

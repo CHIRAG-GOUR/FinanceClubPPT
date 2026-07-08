@@ -26,7 +26,7 @@ export default function SectionStrategy() {
           start: "top 60%"
         },
         y: 40,
-        opacity: 0,
+        
         duration: 0.8,
         stagger: 0.1,
         ease: "power2.out",
@@ -38,7 +38,7 @@ export default function SectionStrategy() {
           start: "top 60%"
         },
         x: -50,
-        opacity: 0,
+        
         duration: 1.5,
         ease: "power3.out",
       });

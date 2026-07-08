@@ -26,7 +26,7 @@ export default function SectionAnalytics() {
           start: "top 60%"
         },
         y: 60,
-        opacity: 0,
+        
         duration: 1,
         stagger: 0.15,
         ease: "power3.out",
@@ -38,7 +38,7 @@ export default function SectionAnalytics() {
           start: "top 60%"
         },
         scale: 0.9,
-        opacity: 0,
+        
         duration: 1.5,
         ease: "power3.out",
       });

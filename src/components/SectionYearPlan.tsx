@@ -24,7 +24,7 @@ export default function SectionYearPlan() {
       );
       gsap.fromTo(
         ".year-card",
-        { y: 40, opacity: 0, scale: 0.95 },
+        { y: 40,  scale: 0.95 },
         { y: 0, opacity: 1, scale: 1, duration: 0.8, stagger: 0.15, ease: "back.out(1.2)", delay: 0.6 }
       );
     }, containerRef);

@@ -26,7 +26,7 @@ export default function SectionLiteracy() {
           start: "top 60%"
         },
         y: 40,
-        opacity: 0,
+        
         duration: 0.8,
         stagger: 0.2,
         ease: "power2.out",
@@ -38,7 +38,7 @@ export default function SectionLiteracy() {
           start: "top 60%"
         },
         scale: 0.95,
-        opacity: 0,
+        
         duration: 1.5,
         ease: "power3.out",
       });

@@ -25,7 +25,7 @@ export default function SectionActivities() {
           start: "top 60%"
         },
         x: -50,
-        opacity: 0,
+        
         duration: 0.8,
       });
       
@@ -48,7 +48,7 @@ export default function SectionActivities() {
           start: "top 60%"
         },
         scale: 1.05,
-        opacity: 0,
+        
         duration: 1.5,
         ease: "power2.out",
       });
