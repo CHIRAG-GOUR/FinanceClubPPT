@@ -59,7 +59,7 @@ export default function PresentationNav({ totalSections }: { totalSections: numb
           scrollToSection(next);
           return next;
         });
-      }, 5000); // 5 seconds per slide
+      }, 10000); // 10 seconds per slide
     } else {
       if (playIntervalRef.current) clearInterval(playIntervalRef.current);
     }
@@ -129,7 +129,7 @@ export default function PresentationNav({ totalSections }: { totalSections: numb
 
         <button 
           onClick={togglePlay}
-          className={`w-10 h-10 ml-2 rounded-full glass-card flex items-center justify-center transition-all shadow-md backdrop-blur-md border border-white ${isPlaying ? 'bg-brand-emerald text-white border-brand-emerald' : 'text-brand-dark bg-white/80 hover:bg-gray-100'}`}
+          className={`w-10 h-10 ml-2 rounded-full flex items-center justify-center transition-all shadow-md border ${isPlaying ? 'bg-emerald-500 text-white border-emerald-500' : 'glass-card backdrop-blur-md text-brand-dark bg-white/80 hover:bg-gray-100 border-white'}`}
           title={isPlaying ? "Pause Slide Show" : "Start Slide Show"}
         >
           {isPlaying ? <Pause size={18} /> : <Play size={18} className="ml-1" />}
