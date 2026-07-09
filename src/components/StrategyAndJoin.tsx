@@ -19,7 +19,7 @@ export default function StrategyAndJoin() {
         gsap.from(item, {
           scrollTrigger: {
             trigger: item,
-            start: "top 80%",
+            start: "left 80%",
           },
           x: i % 2 === 0 ? -50 : 50,
           opacity: 0,
@@ -32,7 +32,7 @@ export default function StrategyAndJoin() {
       gsap.from(".cta-content", {
         scrollTrigger: {
           trigger: ctaRef.current,
-          start: "top 75%",
+          start: "left 75%",
         },
         scale: 0.9,
         opacity: 0,

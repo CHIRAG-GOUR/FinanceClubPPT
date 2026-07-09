@@ -13,26 +13,20 @@ export default function SectionActivities() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    let ctx: gsap.Context;
-    const timer = setTimeout(() => {
-      if (!containerRef.current) return;
-      const scrollerElement = document.getElementById("presentation-container") || window;
-      ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       gsap.from(".activity-item", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: scrollerElement, horizontal: true,
           start: "left 60%"
         },
         x: -50,
-        
+        opacity: 0,
         duration: 0.8,
       });
       
       gsap.from(".stat-number", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: scrollerElement, horizontal: true,
           start: "left 60%"
         },
         innerText: 0,
@@ -44,20 +38,15 @@ export default function SectionActivities() {
       gsap.from(".zimbabwe-image", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: scrollerElement, horizontal: true,
           start: "left 60%"
         },
         scale: 1.05,
-        
+        opacity: 0,
         duration: 1.5,
         ease: "power2.out",
       });
     }, containerRef);
-    }, 100);
-    return () => {
-      clearTimeout(timer);
-      if (ctx) ctx.revert();
-    };
+    return () => ctx.revert();
   }, []);
 
   return (

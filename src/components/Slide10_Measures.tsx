@@ -14,39 +14,29 @@ export default function SectionAchievements() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    let ctx: gsap.Context;
-    const timer = setTimeout(() => {
-      if (!containerRef.current) return;
-      const scrollerElement = document.getElementById("presentation-container") || window;
-      ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       gsap.from(".measure-card", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: scrollerElement, horizontal: true,
           start: "left 60%"
         },
         y: 30,
-        
+        opacity: 0,
         duration: 0.8,
         stagger: 0.15,
       });
       gsap.from(".measures-image", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: scrollerElement, horizontal: true,
           start: "left 60%"
         },
-        
+        opacity: 0,
         scale: 0.9,
         duration: 1.5,
         ease: "power2.out",
       });
     }, containerRef);
-    }, 100);
-    return () => {
-      clearTimeout(timer);
-      if (ctx) ctx.revert();
-    };
+    return () => ctx.revert();
   }, []);
 
   return (

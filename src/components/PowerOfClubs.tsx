@@ -54,7 +54,7 @@ export default function PowerOfClubs() {
           trigger: containerRef.current,
           pin: true,
           scrub: 1,
-          start: "top top",
+          start: "left top",
           end: "+=2000",
         },
       });
@@ -68,7 +68,7 @@ export default function PowerOfClubs() {
       gsap.to(".power-text-content", {
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top top",
+          start: "left top",
           end: "+=500",
           scrub: true,
         },

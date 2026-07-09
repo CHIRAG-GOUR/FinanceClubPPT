@@ -14,19 +14,14 @@ export default function SectionStrategy() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    let ctx: gsap.Context;
-    const timer = setTimeout(() => {
-      if (!containerRef.current) return;
-      const scrollerElement = document.getElementById("presentation-container") || window;
-      ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       gsap.from(".strategy-item", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: scrollerElement, horizontal: true,
           start: "left 60%"
         },
         y: 40,
-        
+        opacity: 0,
         duration: 0.8,
         stagger: 0.1,
         ease: "power2.out",
@@ -34,20 +29,15 @@ export default function SectionStrategy() {
       gsap.from(".effects-image", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: scrollerElement, horizontal: true,
           start: "left 60%"
         },
         x: -50,
-        
+        opacity: 0,
         duration: 1.5,
         ease: "power3.out",
       });
     }, containerRef);
-    }, 100);
-    return () => {
-      clearTimeout(timer);
-      if (ctx) ctx.revert();
-    };
+    return () => ctx.revert();
   }, []);
 
   const effects = [

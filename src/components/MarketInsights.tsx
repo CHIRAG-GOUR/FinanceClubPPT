@@ -16,7 +16,7 @@ export default function MarketInsights() {
       gsap.from(".bento-item", {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 70%",
+          start: "left 70%",
         },
         y: 100,
         opacity: 0,

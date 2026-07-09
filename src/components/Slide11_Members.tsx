@@ -13,36 +13,27 @@ export default function SectionJoin() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    let ctx: gsap.Context;
-    const timer = setTimeout(() => {
-      if (!containerRef.current) return;
-      const scrollerElement = document.getElementById("presentation-container") || window;
-      ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       gsap.from(".join-content", {
         scrollTrigger: {
           trigger: containerRef.current,
-          scroller: scrollerElement, horizontal: true,
           start: "left 60%"
         },
         scale: 0.95,
-        
+        opacity: 0,
         y: 40,
         duration: 1,
         ease: "back.out(1.5)",
       });
     }, containerRef);
-    }, 100);
-    return () => {
-      clearTimeout(timer);
-      if (ctx) ctx.revert();
-    };
+    return () => ctx.revert();
   }, []);
 
   const members = [
     "Prakhar Bhargava", "Mohit Bijarnia", "Daivik Kumar", "Pranjal Gangwar",
     "Parishi Jain", "Amit Kumar", "Mohit", "Tejas", "Shlok", "Nishqa",
     "Aditya", "Abhinav", "Bhumika Sharma", "Muskaan", "Ayush Singal",
-    "Kanishk Sain", "Manvendra Singh Yadav", "Animesh Yash", "Vihaan Singhal",
+    "Kanishk Sain", "Manvendra Singh Yadav", "Animesh", "Yash", "Vihaan Singhal",
     "Akshat Soral", "Atharv Gaur"
   ];
 
