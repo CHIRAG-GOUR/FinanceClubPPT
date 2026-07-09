@@ -112,9 +112,11 @@ export default function PresentationNav({ totalSections }: { totalSections: numb
         
         <div className="flex flex-row gap-2">
           {Array.from({ length: totalSections }).map((_, i) => (
-            <div 
+            <button 
               key={i} 
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${i === currentSection ? "bg-brand-emerald w-8" : "bg-gray-300"}`}
+              onClick={() => scrollToSection(i)}
+              className={`h-2 rounded-full transition-all duration-300 hover:bg-brand-emerald/70 cursor-pointer ${i === currentSection ? "bg-brand-emerald w-8" : "bg-gray-300 w-2"}`}
+              aria-label={`Go to slide ${i + 1}`}
             />
           ))}
         </div>

@@ -1,6 +1,7 @@
 import LivingBackground from "@/components/LivingBackground";
 import PresentationNav from "@/components/PresentationNav";
 
+import SectionWelcome from "@/components/SectionWelcome";
 import SectionMission from "@/components/SectionMission";
 import SectionVision from "@/components/SectionVision";
 import SectionYearPlan from "@/components/SectionYearPlan";
@@ -12,6 +13,7 @@ import SectionLiteracy from "@/components/SectionLiteracy";
 import SectionActivities from "@/components/SectionActivities";
 import SectionAchievements from "@/components/SectionAchievements";
 import SectionJoin from "@/components/SectionJoin";
+import SectionThankYou from "@/components/SectionThankYou";
 
 export const metadata = {
   title: "Finance Club | Premier Investment Group",
@@ -27,6 +29,7 @@ export default function Home() {
         id="presentation-container" 
         className="h-screen w-full overflow-x-scroll snap-x snap-mandatory scroll-smooth flex relative z-10"
       >
+        <section id="section-0" className="h-screen w-full min-w-full flex-shrink-0 snap-start snap-always relative overflow-hidden"><SectionWelcome /></section>
         <section id="section-1" className="h-screen w-full min-w-full flex-shrink-0 snap-start snap-always relative overflow-hidden"><SectionMission /></section>
         <section id="section-2" className="h-screen w-full min-w-full flex-shrink-0 snap-start snap-always relative overflow-hidden"><SectionVision /></section>
         <section id="section-3" className="h-screen w-full min-w-full flex-shrink-0 snap-start snap-always relative overflow-hidden"><SectionYearPlan /></section>
@@ -38,9 +41,10 @@ export default function Home() {
         <section id="section-9" className="h-screen w-full min-w-full flex-shrink-0 snap-start snap-always relative overflow-hidden"><SectionActivities /></section>
         <section id="section-10" className="h-screen w-full min-w-full flex-shrink-0 snap-start snap-always relative overflow-hidden"><SectionAchievements /></section>
         <section id="section-11" className="h-screen w-full min-w-full flex-shrink-0 snap-start snap-always relative overflow-hidden"><SectionJoin /></section>
+        <section id="section-12" className="h-screen w-full min-w-full flex-shrink-0 snap-start snap-always relative overflow-hidden"><SectionThankYou /></section>
       </div>
 
-      <PresentationNav totalSections={11} />
+      <PresentationNav totalSections={13} />
     </main>
   );
 }
